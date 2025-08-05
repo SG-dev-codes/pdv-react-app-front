@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+/* Aplica a toda la ventana */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #F3F4F6;
+  /* Fondo gris claro */
+  font-family: Arial, sans-serif;
+  color: #374151;
+  /* texto gris oscuro */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Contenedor principal centrado */
+.app-container {
   min-height: 100vh;
+  padding: 20px;
+  background-color: #F3F4F6;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
+  margin-left: 200px;
+  /* Añade esto */
+  /* NO pongas align-items ni justify-content aquí */
+}
+
+/* Header con título y botón */
+.list-header-container {
+  display: flex;
+  justify-content: space-between;
+  /* título a la izquierda, botón a la derecha */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 10px;
+}
+
+.list-header-container h2 {
+  margin: 0;
+  color: #09090b;
+}
+
+/* Botón crear producto */
+.crear-btn {
+  padding: 10px 15px;
+  background-color: #9CA3AF;
+  /* azul intenso */
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.crear-btn:hover {
+  background-color: #0dec57;
+  /* azul más oscuro */
+}
+
+/* Tabla productos */
+.producto-list table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #9CA3AF;
+  /* borde gris medio */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.producto-list th,
+.producto-list td {
+  border-bottom: 1px solid #9CA3AF;
+  padding: 10px;
+  text-align: left;
+}
+
+.producto-list th {
+  background-color: #6d88e2;
+  /* azul intenso */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.producto-list tr:hover {
+  background-color: #E0E7FF;
+  /* azul muy claro */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Botones dentro de la lista */
+.producto-list button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.producto-list button:first-of-type {
+  background-color: #3B82F6;
+  /* azul medio */
+  color: white;
+}
+
+.producto-list button:first-of-type:hover {
+  background-color: #2563EB;
+  /* azul más oscuro */
+}
+
+.producto-list button:last-of-type {
+  background-color: #EF4444;
+  /* rojo */
+  color: white;
+}
+
+.producto-list button:last-of-type:hover {
+  background-color: #B91C1C;
+  /* rojo oscuro */
+}
+
+/* Formulario productos */
+.producto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+  width: 320px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(30, 64, 175, 0.15);
+}
+
+.producto-form input,
+.producto-form button {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #9CA3AF;
+  border-radius: 5px;
+}
+
+.producto-form input:focus {
+  outline: none;
+  border-color: #1E40AF;
+  box-shadow: 0 0 5px #1E40AF;
+}
+
+.producto-form button {
+  background-color: #1E40AF;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.producto-form button:hover {
+  background-color: #1E3A8A;
+}
+
+.producto-form label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.producto-form input[type="checkbox"] {
+  width: auto;
+  margin-left: 8px;
+}
+
+/* Responsive básico para móviles */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .producto-form,
+  .producto-list table {
+    width: 100%;
   }
+
+  .producto-list button {
+    margin-bottom: 5px;
+  }
+}
+
+.menu-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  /* igual al ancho del menú */
+  background: #f0f0f0;
+  text-align: center;
+  font-size: 0.85em;
+  color: #888;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  z-index: 101;
+}
+
+.form-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 }
