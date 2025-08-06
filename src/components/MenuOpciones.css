@@ -1,80 +1,109 @@
 .menu-opciones {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: #f0f0f0;
-    border-right: 1px solid #ccc;
-    padding-top: 0;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-}
-
-.menu-opciones ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  border-right: 1px solid #ccc;
+  padding-top: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  font-weight: bold;
 }
 
 .menu-opciones li {
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: background 0.3s;
+  padding: 8px 16px;
+  margin: 4px 0;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
 .menu-opciones li:hover {
-    background-color: #ddd;
+  background-color: #3B82F6;
+  color: white;
+  font-weight: bold;
 }
 
+
+
 .menu-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    margin-bottom: 0px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 0px;
+  margin-top: 10px;
 }
 
 .sg-logo {
-    font-size: 3.5em;
-    font-weight: bold;
-    color: #1976d2;
-    letter-spacing: 2px;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    height: 100%;
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #1976d2;
+  letter-spacing: 2px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%;
 }
 
 .menu-titulo {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #333;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #333;
 }
 
 .menu-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.menu-footer {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 0.85em;
-    color: #888;
-    padding: 0 10px;
-    line-height: 1.5;
+
+.menu-opciones {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.menu-lista {
+  flex-grow: 1;
+  /* que ocupe todo el espacio posible */
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.logout-container {
+  margin-top: auto;
+  /* empuja el logout hacia abajo */
+}
+
+.logout-btn {
+  width: 100%;
+  background-color: #3B82F6;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+
+  background-color: #ef8310;
 }

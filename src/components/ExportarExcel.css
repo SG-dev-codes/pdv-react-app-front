@@ -1,0 +1,18 @@
+.contenedor-exportar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.btn-exportar {
+    padding: 8px 16px;
+    background-color: #056d24;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-exportar:hover {
+    background-color: #2bf47c;
+}

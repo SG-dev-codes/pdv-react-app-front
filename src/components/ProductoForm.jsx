@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import api from "../api/axiosConfig";
-import "./ProductoForm.css";
 import Swal from 'sweetalert2';
 
-const ProductoForm = ({ productoEditado, onProductoGuardado }) => {
+const ProductoForm = ({ productoEditado, onProductoGuardado, onCancelar }) => {
   const [producto, setProducto] = useState({
     nombre: "",
     descripcion: "",
     precio: 0,
     stock: 0,
     activo: true,
-  });git
+  });
 
   // Si se está editando, llena el formulario
   useEffect(() => {
@@ -61,14 +60,13 @@ const ProductoForm = ({ productoEditado, onProductoGuardado }) => {
     <form className="producto-form" onSubmit={handleSubmit}>
       <h2>{producto.id ? "Editar Producto" : "Nuevo Producto"}</h2>
       <input name="nombre" value={producto.nombre} onChange={handleChange} placeholder="Nombre" required />
-      <input name="descripcion" value={producto.descripcion} onChange={handleChange} placeholder="Descripción" required/>
+      <input name="descripcion" value={producto.descripcion} onChange={handleChange} placeholder="Descripción" required />
       <input name="precio" type="number" value={producto.precio} onChange={handleChange} placeholder="Precio" required />
-      <input name="stock" type="text" value={producto.stock} onChange={handleChange} placeholder="Stock" required/>
-      <label>
-        Activo:
-        <input name="activo" type="checkbox" checked={producto.activo} onChange={handleChange} />
-      </label>
+      <input name="stock" type="text" value={producto.stock} onChange={handleChange} placeholder="Stock" required />
       <button type="submit">{producto.id ? "Actualizar" : "Crear"}</button>
+      <button type="button" onClick={onCancelar}>
+        Cancelar
+      </button>
     </form>
   );
 };

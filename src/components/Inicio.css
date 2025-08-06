@@ -1,0 +1,35 @@
+.inicio-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.menu-logo {
+    width: 105px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+.sg-logo {
+    font-size: 52px;
+    font-weight: bold;
+    color: rgb(240, 235, 235);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu-titulo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}

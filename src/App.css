@@ -6,10 +6,8 @@ body,
   margin: 0;
   padding: 0;
   background-color: #F3F4F6;
-  /* Fondo gris claro */
   font-family: Arial, sans-serif;
-  color: #374151;
-  /* texto gris oscuro */
+
 }
 
 /* Contenedor principal centrado */
@@ -21,29 +19,69 @@ body,
   display: flex;
   flex-direction: column;
   margin-left: 200px;
-  /* Añade esto */
-  /* NO pongas align-items ni justify-content aquí */
+
 }
 
-/* Header con título y botón */
 .list-header-container {
   display: flex;
   justify-content: space-between;
-  /* título a la izquierda, botón a la derecha */
   align-items: center;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
-.list-header-container h2 {
-  margin: 0;
-  color: #09090b;
+.list-header-serch {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Botón crear producto */
+
+
+.input-busqueda {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.usuario-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-left: auto;
+  /* Esto empuja el usuario al extremo derecho */
+}
+
+
+
+.avatar-circle {
+  width: 35px;
+  height: 35px;
+  background-color: #ef8310;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.usuario-nombre {
+  font-weight: 500;
+  color: #333;
+  font-weight: bold;
+}
+
+
+
 .crear-btn {
   padding: 10px 15px;
-  background-color: #9CA3AF;
-  /* azul intenso */
+  background-color: #3B82F6;
   border: none;
   color: white;
   cursor: pointer;
@@ -53,7 +91,7 @@ body,
 }
 
 .crear-btn:hover {
-  background-color: #0dec57;
+  background-color: #ef8310;
   /* azul más oscuro */
 }
 
@@ -80,6 +118,8 @@ body,
   color: white;
 }
 
+
+
 .producto-list tr:hover {
   background-color: #E0E7FF;
   /* azul muy claro */
@@ -95,24 +135,25 @@ body,
   font-weight: 600;
 }
 
-.producto-list button:first-of-type {
+.producto-list button:not(.btn-exportar):first-of-type {
   background-color: #3B82F6;
   /* azul medio */
   color: white;
 }
 
-.producto-list button:first-of-type:hover {
+.producto-list button:not(.btn-exportar):first-of-type:hover {
   background-color: #2563EB;
   /* azul más oscuro */
 }
 
-.producto-list button:last-of-type {
+.producto-list button:not(.btn-exportar):last-of-type {
   background-color: #EF4444;
   /* rojo */
   color: white;
 }
 
-.producto-list button:last-of-type:hover {
+
+.producto-list button:not(.btn-exportar):last-of-type:hover {
   background-color: #B91C1C;
   /* rojo oscuro */
 }
@@ -202,4 +243,130 @@ body,
   justify-content: center;
   align-items: center;
   min-height: 80vh;
+}
+
+/* Tabla empleados */
+.empleado-list table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #9CA3AF;
+  /* borde gris medio */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.empleado-list th,
+.empleado-list td {
+  border-bottom: 1px solid #9CA3AF;
+  padding: 10px;
+  text-align: left;
+}
+
+.empleado-list th {
+  background-color: #6d88e2;
+  /* azul intenso */
+  color: white;
+}
+
+.empleado-list tr:hover {
+  background-color: #E0E7FF;
+  /* azul muy claro */
+}
+
+.empleado-list button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.empleado-list button:first-of-type {
+  background-color: #3B82F6;
+  /* azul medio */
+  color: white;
+}
+
+.empleado-list button:first-of-type:hover {
+  background-color: #2563EB;
+  /* azul más oscuro */
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.producto-form button[type="button"] {
+  background-color: #ef8310;
+}
+
+.estado-activo {
+  display: inline-block;
+  background-color: #d4edda;
+  /* verde claro */
+  color: #155724;
+  /* verde oscuro */
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.estado-inactivo {
+  display: inline-block;
+  background-color: #f8d7da;
+  /* rojo claro */
+  color: #721c24;
+  /* rojo oscuro */
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.paginacion {
+  text-align: center;
+  margin-top: 20px;
+  user-select: none;
+}
+
+.pagina-control {
+  cursor: pointer;
+  margin: 0 10px;
+  color: #000;
+}
+
+.pagina-control:hover {
+  text-decoration: underline;
+}
+
+.pagina-control.deshabilitado {
+  cursor: default;
+  color: #999;
+  pointer-events: none;
+}
+
+.pagina-info {
+  margin: 0 10px;
+}
+
+.info-productos {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.info-productos span {
+  display: inline-block;
+  border: 2px solid #8a8888;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-left: 8px;
+  min-width: 30px;
+  text-align: center;
+  font-weight: normal;
 }
